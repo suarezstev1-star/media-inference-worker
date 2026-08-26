@@ -44,8 +44,18 @@ def main():
     if music:
         inputs += ["-i", music]
 
-    # Video: freeze last frame out to `total`.
-    vfilter = f"[0:v]tpad=stop_mode=clone:stop_duration={max(0, total - vdur):.2f}[v]"
+    # Video: slow it down (continuous motion) to match the voice; if that would
+    # need more than 1.8x, stretch to the cap and freeze only the small remainder.
+    factor = total / vdur if vdur else 1.0
+    cap = 1.8
+    if factor <= 1.02:
+        vfilter = "[0:v]copy[v]"
+    elif factor <= cap:
+        vfilter = f"[0:v]setpts={factor:.4f}*PTS[v]"
+    else:
+        rem = total - vdur * cap
+        vfilter = (f"[0:v]setpts={cap:.4f}*PTS,"
+                   f"tpad=stop_mode=clone:stop_duration={max(0, rem):.2f}[v]")
 
     if music:
         afilter = (
