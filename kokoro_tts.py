@@ -18,14 +18,16 @@ if flow_mode:
 pipe = KPipeline(lang_code="e", repo_id="hexgrad/Kokoro-82M")
 pipe.g2p = espeak.EspeakG2P(language=lang)
 SR = 24000
-gap = np.zeros(int(SR * pause), dtype=np.float32)
 parts, timing, t = [], [], 0.0
 # one chunk per line (KPipeline splits on \n+)
 for res, phrase in zip(pipe("\n".join(phrases), voice=voice, speed=speed), phrases):
     a = np.asarray(res.audio if hasattr(res, "audio") else res[2], dtype=np.float32)
     d = len(a) / SR
     timing.append({"text": phrase, "start": round(t, 3), "end": round(t + d, 3)})
-    parts += [a, gap]; t += d + pause
+    # longer breath after questions/exclamations and ellipses
+    extra = 0.3 if phrase.rstrip()[-1:] in "?!" else (0.2 if phrase.rstrip().endswith("…") else 0.0)
+    gap = np.zeros(int(SR * (pause + extra)), dtype=np.float32)
+    parts += [a, gap]; t += d + pause + extra
 audio = np.concatenate(parts) if parts else np.zeros(1, dtype=np.float32)
 sf.write(out, audio, SR)
 json.dump(timing, open(out.rsplit(".", 1)[0] + ".json", "w"), ensure_ascii=False, indent=1)
