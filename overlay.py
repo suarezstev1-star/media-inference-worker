@@ -116,6 +116,17 @@ def wordmark(draw, size, y=None):
     draw.text(((size[0] - w) // 2, y), WORDMARK, font=f, fill=GOLD_SOFT)
 
 
+def footer(img, draw, size):
+    """Stamp the real logo if available, else the text wordmark."""
+    try:
+        import brandkit
+        if brandkit.place_logo(img, size):
+            return
+    except Exception:
+        pass
+    wordmark(draw, size)
+
+
 def accent_line(draw, cx, y, size, w_frac=0.16):
     w = int(size[0] * w_frac)
     draw.rectangle([cx - w // 2, y, cx + w // 2, y + max(3, int(size[0] * 0.006))],
@@ -158,7 +169,7 @@ def piece_photo(bg, size, eyebrow, headline, sub, cta=True, out=None):
     if cta:
         y += int(W * 0.03)
         cta_pill(d, W // 2, y, size)
-    wordmark(d, size)
+    footer(img, d, size)
     save(img, out)
 
 
@@ -237,7 +248,7 @@ def piece_card(bg, size, eyebrow, headline, sub=None, checklist=None,
 
     if cta:
         cta_pill(d, W // 2, H - bottom_band + int(H * 0.03), size)
-    wordmark(d, size)
+    footer(img, d, size)
     save(img, out)
 
 
@@ -260,7 +271,7 @@ def piece_brand(bg, size, tagline, out=None):
     draw_block(d, lines, hf, m, y, WHITE, gap, "center", box_w, shadow=False)
     y += len(lines) * (a + de + gap) + int(H * 0.03)
     cta_pill(d, W // 2, y, size)
-    wordmark(d, size)
+    footer(img, d, size)
     save(img, out)
 
 

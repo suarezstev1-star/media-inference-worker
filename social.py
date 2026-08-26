@@ -42,7 +42,13 @@ def swipe(d, size):
     d.text((W - w - int(W * 0.08), int(H * 0.88)), t, font=f, fill=GOLD_SOFT)
 
 
-def wm(d, size):
+def wm(img, d, size):
+    try:
+        import brandkit
+        if brandkit.place_logo(img, size):
+            return
+    except Exception:
+        pass
     W, H = size
     f = ov.font(ov.SANS_B, int(W * 0.026))
     w = ov.text_w(d, ov.WORDMARK, f)
@@ -66,7 +72,7 @@ def car_cover(bg, kicker, title, n, out):
         lw = ov.text_w(d, ln, hf); d.text(((W - lw) // 2, y), ln, font=hf, fill=WHITE)
         y += int(W * 0.11)
     ov.accent_line(d, W // 2, int(H * 0.30) - int(W * 0.02), SZ)
-    swipe(d, SZ); wm(d, SZ)
+    swipe(d, SZ); wm(img, d, SZ)
     save(img, out)
 
 
@@ -85,7 +91,7 @@ def car_mf(bg, idx, n, mito, realidad, out):
     rf = ov.font(ov.SANS, int(W * 0.048))
     for ln in ov.wrap(d, realidad, rf, box):
         d.text((m, y), ln, font=rf, fill=CREAM); y += int(W * 0.065)
-    wm(d, SZ)
+    wm(img, d, SZ)
     save(img, out)
 
 
@@ -105,7 +111,7 @@ def car_body(bg, idx, n, label, main, sub, out):
         sf = ov.font(ov.SANS, int(W * 0.046))
         for ln in ov.wrap(d, sub, sf, box):
             d.text((m, y), ln, font=sf, fill=CREAM); y += int(W * 0.062)
-    wm(d, SZ)
+    wm(img, d, SZ)
     save(img, out)
 
 
@@ -120,7 +126,7 @@ def car_cta(bg, idx, n, title, out):
         y += int(W * 0.095)
     y += int(W * 0.05)
     ov.cta_pill(d, W // 2, y, SZ)
-    wm(d, SZ)
+    wm(img, d, SZ)
     save(img, out)
 
 
