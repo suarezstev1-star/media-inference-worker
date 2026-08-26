@@ -140,5 +140,25 @@ def build_hero(src="hero_video_veo.mp4", out="hero_video.mp4", size=(1080, 1920)
     compose(OUT / src, out, layers, size)
 
 
+def build_product(src="prod_llamada_veo.mp4", out="comercial_llamada.mp4",
+                  size=(1080, 1920)):
+    layers = [
+        {"img": scrim_png(size), "start": None, "end": None},
+        {"img": text_beat_png(size, ["¿Y si lo resolvieras", "todo en una llamada?"],
+                              ov.SERIF, 0.066, ov.WHITE, 0.58),
+         "start": 0.2, "end": 2.4},
+        {"img": text_beat_png(size, ["Vida · Gastos finales", "· Ahorro"],
+                              ov.SERIF, 0.072, ov.GOLD, 0.60),
+         "start": 2.4, "end": 4.2},
+        {"img": cta_beat_png(size, 0.66), "start": 4.2, "end": 99},
+        {"img": wordmark_png(size), "start": None, "end": None},
+    ]
+    compose(OUT / src, out, layers, size)
+
+
 if __name__ == "__main__":
-    build_hero()
+    import sys
+    if len(sys.argv) > 1 and sys.argv[1] == "product":
+        build_product()
+    else:
+        build_hero()
