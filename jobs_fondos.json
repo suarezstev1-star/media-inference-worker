@@ -1,0 +1,18 @@
+[
+  {"name": "fondo_navy_a", "model": "nano-banana-2-lite", "aspect_ratio": "9:16",
+   "prompt": "Deep navy blue vertical poster background, elegant thin gold art deco geometric line accents only in the top and bottom margins, soft subtle radial glow in the upper center, large clean empty smooth area in the middle for big text, luxurious minimal premium financial brand, calm and refined, no people, no text, no letters, no watermarks"},
+  {"name": "fondo_navy_b", "model": "nano-banana-2-lite", "aspect_ratio": "9:16",
+   "prompt": "Deep navy blue vertical background with a very subtle faint golden lion silhouette watermark low in the bottom third, elegant, mostly empty dark smooth center for large text, thin gold accent line near the bottom, premium luxury insurance brand poster, no visible text, no letters, no watermarks logos"},
+  {"name": "fondo_navy_c", "model": "nano-banana-2-lite", "aspect_ratio": "9:16",
+   "prompt": "Elegant vertical gradient background from deep navy blue at top to slightly warmer midnight blue at bottom, a thin elegant gold rectangular frame border inset from the edges, empty clean center, premium minimal financial poster, no people, no text, no letters, no watermarks"},
+  {"name": "fondo_familia_45", "model": "nano-banana-2-lite", "aspect_ratio": "4:5",
+   "prompt": "Cinematic lifestyle photograph of a warm multigenerational Latino family at home, elegant grey-haired grandmother embraced by adult daughter and young grandchild, soft golden hour light, tender protective hopeful mood, 85mm shallow depth of field, refined navy blue and gold color grade, dignified, generous empty soft-focus space in the lower third for text, premium insurance aesthetic, no text, no logos, no watermarks"},
+  {"name": "fondo_familia_11", "model": "nano-banana-2-lite", "aspect_ratio": "1:1",
+   "prompt": "Warm lifestyle photograph of a happy older Latino couple in their 60s at home smiling gently, soft window light, navy blue and gold refined color grade, dignified and reassuring, clean empty darker area on the lower portion for text overlay, premium insurance brand look, no text, no logos, no watermarks"},
+  {"name": "fondo_manos_45", "model": "nano-banana-2-lite", "aspect_ratio": "4:5",
+   "prompt": "Elegant conceptual image of two cupped adult hands gently holding a glowing golden heart, protective caring gesture, deep navy blue and warm gold palette, dark navy background, dignified premium 3D rendered illustration matching a luxury insurance brand, soft light, large empty space at the bottom for text, no text, no watermarks"},
+  {"name": "fondo_emblema_11", "model": "nano-banana-2-lite", "aspect_ratio": "1:1",
+   "prompt": "Luxury heraldic emblem of a majestic golden lion and lioness facing each other forming a protective arch around a small navy shield with a gold star, deep navy blue and metallic gold, elegant crest, clean warm ivory background centered, premium insurance brand mark, polished, soft studio light, empty space at bottom for a tagline, no text, no watermarks"},
+  {"name": "fondo_navy_11", "model": "nano-banana-2-lite", "aspect_ratio": "1:1",
+   "prompt": "Deep navy blue square background with elegant thin gold geometric corner accents, subtle soft central glow, large clean empty smooth center for a checklist and text, premium minimal luxury financial brand card, no people, no text, no letters, no watermarks"}
+]
