@@ -12,6 +12,9 @@ speed = float(sys.argv[5]) if len(sys.argv) > 5 else 0.92
 pause = float(sys.argv[6]) if len(sys.argv) > 6 else 0.24
 
 phrases = [l.strip() for l in open(txtfile, encoding="utf-8") if l.strip()]
+flow_mode = len(sys.argv) > 7 and sys.argv[7] == "flow"
+if flow_mode:
+    phrases = [" ".join(phrases)]  # one natural pass, real prosody
 pipe = KPipeline(lang_code="e", repo_id="hexgrad/Kokoro-82M")
 pipe.g2p = espeak.EspeakG2P(language=lang)
 SR = 24000
