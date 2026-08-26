@@ -1,0 +1,26 @@
+[
+  {
+    "name": "dir_hero_familia",
+    "model": "nano-banana-2-lite",
+    "aspect_ratio": "4:5",
+    "prompt": "Cinematic lifestyle photograph of a warm multigenerational Latino family at home, an elegant grey-haired grandmother embraced by her adult daughter and young grandchild, soft golden hour window light, tender protective mood, shot on 85mm, shallow depth of field, refined navy blue and gold color grade, dignified and hopeful, generous empty soft-focus space in the lower third for text, premium insurance brand aesthetic, no text, no logos, no watermarks"
+  },
+  {
+    "name": "dir_emblema_leones",
+    "model": "nano-banana-2-lite",
+    "aspect_ratio": "1:1",
+    "prompt": "Luxury emblem illustration of a majestic golden lion and lioness facing each other forming a protective heart shape around a small shield, deep navy blue and metallic gold, elegant heraldic crest style, clean warm ivory background, symmetrical, premium insurance brand logo mark, polished 3D rendered feel, soft studio lighting, no text, no watermarks"
+  },
+  {
+    "name": "dir_card_navy",
+    "model": "nano-banana-2-lite",
+    "aspect_ratio": "9:16",
+    "prompt": "Elegant deep navy blue vertical background with subtle art deco gold geometric line accents in the corners, soft radial glow in the center, luxurious minimal texture, large clean empty center area for large text, premium financial brand poster background, refined and calm, no people, no text, no watermarks"
+  },
+  {
+    "name": "dir_manos_legado",
+    "model": "nano-banana-2-lite",
+    "aspect_ratio": "4:5",
+    "prompt": "Elegant conceptual image of two cupped adult hands gently holding a glowing golden heart, soft protective gesture, deep navy blue and warm gold palette, cream background, dignified and caring mood, premium 3D rendered illustration style matching a luxury insurance brand, soft light, empty space at bottom for text, no text, no watermarks"
+  }
+]
