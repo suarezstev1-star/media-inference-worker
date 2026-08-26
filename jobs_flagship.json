@@ -1,0 +1,6 @@
+[
+  {"name": "shot_madre", "model": "veo-3.1-fast", "aspect_ratio": "9:16",
+   "prompt": "Cinematic close shot of an elegant older Latina woman sitting alone by a window, gently holding a framed family photograph, soft golden light, tender pensive emotional mood, shallow depth of field, refined navy blue and gold color grade, premium insurance commercial, photorealistic, no text, no captions, no watermarks"},
+  {"name": "shot_familia", "model": "veo-3.1-fast", "aspect_ratio": "9:16",
+   "prompt": "Cinematic warm shot of a multigenerational Latino family embracing together on a sofa at home, relief love and protection, soft golden hour light, hopeful reassured mood, refined navy blue and gold color grade, premium insurance commercial, photorealistic, no text, no captions, no watermarks"}
+]

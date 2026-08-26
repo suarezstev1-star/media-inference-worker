@@ -114,7 +114,7 @@ def main():
     cur = "bg"
     for i, L in enumerate(layers):
         en = f":enable='between(t,{L['start']},{L['end']})'" if L.get("start") is not None else ""
-        parts.append(f"[{cur}][{i+3}:v]overlay=0:0{en}[v{i}]")
+        parts.append(f"[{cur}][{i+2}:v]overlay=0:0{en}[v{i}]")
         cur = f"v{i}"
     parts.append(f"[1:a]afade=t=out:st={max(0,adur-0.4):.2f}:d=0.4[a]")
     fc = ";".join(parts)
