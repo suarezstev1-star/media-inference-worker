@@ -156,9 +156,39 @@ def build_product(src="prod_llamada_veo.mp4", out="comercial_llamada.mp4",
     compose(OUT / src, out, layers, size)
 
 
+def build_vida(src="prod_vida_veo.mp4", out="comercial_vida.mp4",
+               size=(1080, 1920)):
+    layers = [
+        {"img": scrim_png(size), "start": None, "end": None},
+        {"img": text_beat_png(size, ["Tu vida vale.", "Tu familia también."],
+                              ov.SERIF, 0.070, ov.WHITE, 0.58),
+         "start": 0.2, "end": 2.4},
+        {"img": text_beat_png(size, ["Vida entera:", "protección de por vida"],
+                              ov.SERIF, 0.066, ov.GOLD, 0.60),
+         "start": 2.4, "end": 4.2},
+        {"img": cta_beat_png(size, 0.66), "start": 4.2, "end": 99},
+        {"img": wordmark_png(size), "start": None, "end": None},
+    ]
+    compose(OUT / src, out, layers, size)
+
+
+def build_iul(src="prod_iul_veo.mp4", out="comercial_iul.mp4",
+              size=(1080, 1920)):
+    layers = [
+        {"img": scrim_png(size), "start": None, "end": None},
+        {"img": text_beat_png(size, ["¿Y si tu seguro", "también te diera ahorro?"],
+                              ov.SERIF, 0.060, ov.WHITE, 0.58),
+         "start": 0.2, "end": 2.6},
+        {"img": text_beat_png(size, ["Protección de vida", "+ ahorro para tu retiro"],
+                              ov.SERIF, 0.060, ov.GOLD, 0.60),
+         "start": 2.6, "end": 4.3},
+        {"img": cta_beat_png(size, 0.66), "start": 4.3, "end": 99},
+        {"img": wordmark_png(size), "start": None, "end": None},
+    ]
+    compose(OUT / src, out, layers, size)
+
+
 if __name__ == "__main__":
     import sys
-    if len(sys.argv) > 1 and sys.argv[1] == "product":
-        build_product()
-    else:
-        build_hero()
+    builders = {"product": build_product, "vida": build_vida, "iul": build_iul}
+    builders.get(sys.argv[1] if len(sys.argv) > 1 else "", build_hero)()
