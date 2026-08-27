@@ -65,3 +65,52 @@ def place_logo(img, size, y_center_frac=0.93, h_frac=0.085, name="logo_principal
 
 def has_logo(name="logo_principal"):
     return load_logo(name) is not None
+
+
+def load_emblem():
+    for ext in (".png",".jpg",".jpeg",".webp"):
+        p = BRAND / f"emblem{ext}"
+        if p.exists():
+            key="emblem:"+str(p)
+            if key in _cache: return _cache[key]
+            im=Image.open(p).convert("RGBA")
+            corners=np.array(im)[[0,-1],:,:3]
+            if corners.min()>200:
+                im=_remove_bg(im, thresh=210)
+            # autocrop to content
+            bbox=im.getbbox()
+            if bbox: im=im.crop(bbox)
+            _cache[key]=im; return im
+    return None
+
+
+def _lum_at(img, box):
+    a=np.array(img.convert("RGB").crop(box))
+    return a.mean()
+
+
+def place_lockup(img, size, y_center_frac=0.905, emblem_h_frac=0.085):
+    """Emblem + DINASTIA wordmark as a footer lockup. Returns True if drawn."""
+    import overlay as ov
+    from PIL import ImageDraw
+    em=load_emblem()
+    if em is None:
+        return False
+    W,H=size
+    eh=int(H*emblem_h_frac); ew=max(1,int(em.width*eh/em.height))
+    d=ImageDraw.Draw(img if img.mode=="RGBA" else img)
+    # choose text color by background luminance of footer strip
+    strip=(0,int(H*0.86),W,H)
+    dark=_lum_at(img,strip)<110
+    txt_color=ov.GOLD_SOFT if dark else ov.NAVY
+    f=ov.font(ov.SANS_B,int(W*0.028))
+    tw=ov.text_w(d,ov.WORDMARK,f)
+    gap=int(W*0.02)
+    total_h=eh+gap+ (f.getmetrics()[0]+f.getmetrics()[1])
+    ey=int(H*y_center_frac)-total_h//2
+    base=img.convert("RGBA")
+    base.alpha_composite(em.resize((ew,eh),Image.LANCZOS),((W-ew)//2,ey))
+    img.paste(base.convert("RGB"),(0,0))
+    d=ImageDraw.Draw(img)
+    d.text(((W-tw)//2, ey+eh+gap), ov.WORDMARK, font=f, fill=txt_color)
+    return True
