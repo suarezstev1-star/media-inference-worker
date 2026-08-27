@@ -1,0 +1,6 @@
+[
+  {"name": "fondo_navy_11", "model": "nano-banana-2-lite", "aspect_ratio": "1:1",
+   "prompt": "Full-bleed deep navy blue square background filling the entire frame edge to edge, elegant thin gold art deco geometric line accents in the four corners, subtle soft radial glow in the upper center, large clean smooth empty middle area, premium luxury financial brand, no card object, no desk, no table, no people, no text, no letters, no watermarks"},
+  {"name": "fondo_navy_11b", "model": "nano-banana-2-lite", "aspect_ratio": "1:1",
+   "prompt": "Full-bleed deep navy blue square gradient background filling the whole frame edge to edge, a faint subtle golden lion silhouette watermark centered low, soft glow, mostly empty smooth dark surface for text, premium luxury insurance brand, no card, no desk, no object, no people, no text, no letters, no watermarks"}
+]

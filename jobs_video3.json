@@ -1,0 +1,6 @@
+[
+  {"name": "prod_vida_veo", "model": "veo-3.1-fast", "aspect_ratio": "9:16",
+   "prompt": "Cinematic slow push-in on a warm Latino father in his 40s playing tenderly with his two young children on a sofa in a sunny living room, soft golden window light, loving and protective mood, shallow depth of field, refined navy blue and gold cinematic color grade, premium insurance commercial look, photorealistic, no text, no captions, no watermarks"},
+  {"name": "prod_iul_veo", "model": "veo-3.1-fast", "aspect_ratio": "9:16",
+   "prompt": "Cinematic slow push-in on a calm confident middle-aged Latina woman reviewing her finances on a tablet at a bright modern kitchen table, a small plant and a cup of coffee nearby, hopeful reassured mood about the future, soft natural light, refined navy blue and gold cinematic color grade, premium insurance commercial look, photorealistic, no text, no captions, no watermarks"}
+]

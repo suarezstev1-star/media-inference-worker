@@ -1,0 +1,10 @@
+[
+  {"name":"soc_navy_45_a","model":"nano-banana-2-lite","aspect_ratio":"4:5",
+   "prompt":"Full-bleed deep navy blue vertical background edge to edge, elegant thin gold art deco line accents in the corners, soft radial glow upper-center, large clean empty smooth area for text, premium luxury financial brand card, no card object, no people, no text, no letters, no watermarks"},
+  {"name":"soc_navy_45_b","model":"nano-banana-2-lite","aspect_ratio":"4:5",
+   "prompt":"Full-bleed deep navy blue vertical gradient background edge to edge, faint subtle golden lion silhouette watermark low center, soft glow, mostly empty smooth dark surface for text, premium luxury insurance brand, no card, no desk, no people, no text, no letters, no watermarks"},
+  {"name":"soc_navy_11_a","model":"nano-banana-2-lite","aspect_ratio":"1:1",
+   "prompt":"Full-bleed deep navy blue square background edge to edge, subtle gold geometric corner accents, soft central glow, large empty smooth center for text, premium minimal financial brand, no people, no text, no letters, no watermarks"},
+  {"name":"soc_cream_45","model":"nano-banana-2-lite","aspect_ratio":"4:5",
+   "prompt":"Full-bleed warm ivory cream vertical background edge to edge, very subtle elegant gold art deco line accents in the corners, soft paper texture, large clean empty center for dark text, premium luxury brand quote card, navy and gold accents, no people, no text, no letters, no watermarks"}
+]
